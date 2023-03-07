@@ -2,6 +2,7 @@ import Head from "next/head"
 import Layout, { siteTitle } from "../components/layout"
 import Link from "next/link"
 import Date from "../components/date"
+import Navbar from '../components/navbar';
 
 import utilStyles from "../styles/utils.module.css"
 import { getSortedPostsData } from "../lib/posts"
@@ -25,6 +26,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <Navbar></Navbar>
       <section className={utilStyles.headingMd}>
         <p>
           Software & Data Engineer | I love to work on products and have a faible for DevOps. </p>
