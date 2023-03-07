@@ -5,6 +5,10 @@ import Date from "../components/date"
 
 import utilStyles from "../styles/utils.module.css"
 import { getSortedPostsData } from "../lib/posts"
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -22,12 +26,20 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
         <p>
-          (This is a sample website - you’ll be building a site like this on{" "}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+          Software & Data Engineer | I love to work on products and have a faible for DevOps. </p>
       </section>
+
+      <section className={utilStyles.headingMd}>
+      <Link href="https://github.com/carsten-bo" style={{ textDecoration: 'none', color: "black" }}>
+        <FontAwesomeIcon icon={faGithub} size="l" pull="left" />
+      </Link>
+
+      <Link href="https://www.linkedin.com/in/carsten-boehm/"style={{ textDecoration: 'none', color: "black" }}>
+        <FontAwesomeIcon icon={faLinkedin} size="l" pull="left"/>
+      </Link>
+      </section>
+      <br></br>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>

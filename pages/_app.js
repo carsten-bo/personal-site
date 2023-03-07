@@ -1,4 +1,4 @@
-// `pages/_app.js`
+// `pages/_app.js`:checkhealth nvim_treesitter
 import '../styles/global.css';
 
 export default function App({ Component, pageProps }) {
