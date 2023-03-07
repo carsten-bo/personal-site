@@ -3,15 +3,11 @@ import Layout, { siteTitle } from "../components/layout"
 import Link from "next/link"
 import Date from "../components/date"
 
-import Image from "next/image"
-
 import utilStyles from "../styles/utils.module.css"
 import { getSortedPostsData } from "../lib/posts"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "@fortawesome/fontawesome-svg-core/styles.css"
-
-const name = "Carsten Böhm"
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -24,31 +20,27 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout blog>
       <Head>
         <title>{siteTitle}</title>
       </Head>
 
-      <header className="header">
-        <>
-          <Image
-            priority
-            src="/images/profile.jpg"
-            className={utilStyles.borderCircle}
-            height={144}
-            width={144}
-            alt=""
-          />
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
-        </>
-      </header>
-      <section className={utilStyles.headingMd}></section>
       <br></br>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Software & Data Engineer | I love to work on products and have a
-          faible for DevOps.{" "}
-        </p>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <ul className={utilStyles.list}>
+          {allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              <Link href={`/posts/${id}`} legacyBehavior>
+                {title}
+              </Link>
+              <br />
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   )

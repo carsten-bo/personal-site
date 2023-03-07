@@ -1,13 +1,24 @@
 import Link from "next/link"
 import Image from "next/image"
 import React, { useState } from "react"
-// import Logo from "./Logo";
+import Logo from "./Logo"
+import utilStyles from "../styles/utils.module.css"
 import NavItem from "./navitem"
 
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+import { LinkedinIcon } from "next-share"
+
+const GithubIcon = <FontAwesomeIcon icon={faGithub} size="lg" />
+
+const LinkedInIcon = <FontAwesomeIcon icon={faLinkedin} size="lg" />
+
 const MENU_LIST = [
-  { text: "Home", href: "/" },
-  { text: "About Us", href: "/about" },
-  { text: "Contact", href: "/contact" },
+  { text: GithubIcon, href: "https://github.com/carsten-bo" },
+  { text: LinkedInIcon, href: "https://www.linkedin.com/in/carsten-boehm/" },
+  { text: "Blog", href: "/blog" },
+  { text: "About", href: "/about" },
 ]
 
 const Navbar = () => {
@@ -18,8 +29,9 @@ const Navbar = () => {
     <header>
       <nav className={`nav`}>
         <Link href={"/"}>
-            <h1 className="logo">CodeWithMarish</h1>
+          <Logo />
         </Link>
+
         <div
           onClick={() => setNavActive(!navActive)}
           className={`nav__menu-bar`}
