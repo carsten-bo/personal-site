@@ -1,19 +1,13 @@
-import Head from "next/head"
-import styles from "../styles/layout.module.css"
-import utilStyles from "../styles/utils.module.css"
-import Link from "next/link"
+import Footer from "./Footer"
+import Navbar from "./Navbar"
+import Body from "./Body"
 
-export const siteTitle = "My Personal Site"
-
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
   return (
-    <div className={styles.container}>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
+    <div class="flex flex-col h-screen bg-slate-100">
+      <header class="mt-auto"><Navbar /></header>
+      <main class="flex-grow"><Body>{children}</Body></main>
+      <footer class="mt-auto"><Footer /></footer>
     </div>
   )
 }

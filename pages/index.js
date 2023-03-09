@@ -1,17 +1,9 @@
 import Head from "next/head"
-import Layout, { siteTitle } from "../components/layout"
-import Link from "next/link"
-import Date from "../components/date"
 
-import Image from "next/image"
 
-import utilStyles from "../styles/utils.module.css"
-import { getSortedPostsData } from "../lib/posts"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "@fortawesome/fontawesome-svg-core/styles.css"
-
-const name = "Carsten Böhm"
+import { getSortedPostsData } from "../lib/posts"
+import Layout from "../components/Layout"
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -24,32 +16,14 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <div>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Home</title>
       </Head>
 
-      <header className="header">
-        <>
-          <Image
-            priority
-            src="/images/profile.jpg"
-            className={utilStyles.borderCircle}
-            height={144}
-            width={144}
-            alt=""
-          />
-          <h1 className={utilStyles.heading2Xl}>{name}</h1>
-        </>
-      </header>
-      <section className={utilStyles.headingMd}></section>
-      <br></br>
-      <section className={utilStyles.headingMd}>
-        <p>
-          Software & Data Engineer | I love to work on products and have a
-          faible for DevOps.{" "}
-        </p>
-      </section>
-    </Layout>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </div>
   )
 }
