@@ -1,5 +1,5 @@
 // `pages/_app.js`:checkhealth nvim_treesitter
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import '../styles/globals.css'
 
 export default function App({ Component, pageProps }) {

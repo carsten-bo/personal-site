@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "@fortawesome/fontawesome-svg-core/styles.css"
 
 import { getSortedPostsData } from "../lib/posts"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 
 const GithubIcon = <FontAwesomeIcon icon={faGithub} size="lg" />
 const LinkedInIcon = <FontAwesomeIcon icon={faLinkedin} size="lg" />
