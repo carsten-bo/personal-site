@@ -7,10 +7,17 @@ module.exports = {
   ],
   darkMode: "media",
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+          "custom-dark-blue":"#0e1525",
+          "custom-orange":"#f26207",
+          "custom-grey": "#8b99ae"
+        }
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [require("@tailwindcss/typography")],
+
 }
