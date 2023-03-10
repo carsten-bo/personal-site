@@ -4,8 +4,8 @@ import React from "react"
 const Logo = () => {
   return (
 
-    <div class="flex items-center space-x-2">
-      <div class="">
+    <div className="">
+      <div className="">
           {/* <Image
             priority
             src="/images/profile.jpg"
@@ -13,7 +13,7 @@ const Logo = () => {
             width={40}
           /> */}
       </div>
-      <h1 class="font-bold text-gl">Carsten Böhm</h1>
+      <h1 className="font-bold text-gl">Carsten Böhm</h1>
     </div>
   )
 }

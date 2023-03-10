@@ -1,13 +1,13 @@
-import Footer from "./footer"
-import Navbar from "./navbar"
-import Body from "./body"
+import Footer from "./Footer"
+import Navbar from "./Navbar"
+import Body from "./Body"
 
 export default function Layout({ children }) {
   return (
-    <div class="flex flex-col h-screen">
-      <header class="mt-auto"><Navbar /></header>
-      <main class="flex-grow mt-auto"><Body>{children}</Body></main>
-      <footer class="mt-auto"><Footer /></footer>
+    <div className="flex flex-col h-screen bg-slate-100">
+      <header className="mt-auto"><Navbar /></header>
+      <main className="flex-grow"><Body>{children}</Body></main>
+      <footer className="mt-auto"><Footer /></footer>
     </div>
   )
 }
