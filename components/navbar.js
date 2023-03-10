@@ -1,7 +1,7 @@
 import Link from "next/link"
 import React, { useState } from "react"
-import Logo from "./Logo"
-import NavItem from "./Navitem"
+import Logo from "./logo"
+import NavItem from "./navitem"
 
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
