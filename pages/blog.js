@@ -23,9 +23,6 @@ export default function Blog({ allPostsData }) {
   return (
     <div >
         <div className="mx-auto max-w-2xl lg:mx-0">
-
-          <PersonalCard/>
-
           <h2 className="text-3xl content-center font-bold tracking-tight sm:text-4xl">From the blog</h2>
           <p className="mt-2 text-lg leading-8">
             Learn how to grow your business with our expert advice.
